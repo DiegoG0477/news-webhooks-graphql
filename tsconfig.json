@@ -1,0 +1,33 @@
+// {
+//     "compilerOptions": {
+//       "rootDirs": ["src"],
+//       "outDir": "dist",
+//       "lib": ["es2020"],
+//       "target": "es2017",
+//       "module": "esnext",
+//       "moduleResolution": "node",
+//       "esModuleInterop": true,
+//       "types": ["node"]
+//     }
+// }
+
+
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "esModuleInterop": true,
+      "target": "es6",
+      "noImplicitAny": true,
+      "moduleResolution": "node",
+      "sourceMap": false,
+      "rootDir": "src",
+      "strict": true,
+      "noEmit": false,
+      "resolveJsonModule": true,
+      "noUnusedLocals": true,
+      "outDir": "./dist"
+    },
+    "exclude": [ "node_modules" ]
+  
+  }
+  

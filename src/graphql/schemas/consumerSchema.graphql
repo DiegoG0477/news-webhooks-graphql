@@ -1,0 +1,29 @@
+type Consumer {
+    id: ID
+    url: String!
+    news: Boolean
+    trafficNotifications: Boolean
+    weather: Boolean
+    socialEvents: Boolean
+}
+
+type Query {
+    getConsumer(id: ID!): Consumer
+    getAllConsumers: [Consumer!]!
+    getConsumerPaginated(page: Int!, limit: Int!): [Consumer]
+    getConsumerByUrl(url: String!): Consumer
+}
+
+input ConsumerInput {
+    url: String!
+    news: Boolean
+    trafficNotifications: Boolean
+    weather: Boolean
+    socialEvents: Boolean
+}
+
+type Mutation {
+    createConsumer(consumerInput: ConsumerInput!): Consumer
+    updateConsumer(id: ID!, consumerInput: ConsumerInput): Consumer
+    deleteConsumer(id: ID!): Boolean!
+}

@@ -1,0 +1,26 @@
+type User {
+    id: ID
+    email: String!
+    password: String!
+}
+
+type Query {
+    getUser(id: ID!): User
+    getUsersPaginated(page: Int!, limit: Int!): [User]
+}
+
+input UserInput {
+    email: String!
+    password: String!
+}
+
+type Mutation {
+    register(userInput: UserInput!): User
+    login(userInput: UserInput!): AuthData!
+    deleteUser(id: ID!): Boolean
+    updateUser(id: ID!, userInput: UserInput!): User
+}
+
+type AuthData {
+  token: String!
+}

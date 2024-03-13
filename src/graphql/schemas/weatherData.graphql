@@ -1,0 +1,27 @@
+type WeatherData {
+    id: ID
+    type: String!
+    intensity: String!
+    advice: String!
+    event: String!
+    city: String!
+    date: String
+}
+
+type Query {
+    getWeatherData(id: ID!): WeatherData
+    getAllWeatherData: [WeatherData!]!
+    getWeatherDataByCity(city: String!): [WeatherData!]!
+}
+
+input WeatherDataInput {
+    type: String!
+    intensity: String!
+    advice: String!
+    event: String!
+    city: String!
+}
+
+type Mutation {
+    createWeatherData(weatherDataInput: WeatherDataInput!): WeatherData!
+}

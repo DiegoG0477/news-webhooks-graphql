@@ -1,0 +1,23 @@
+type TrafficNotification {
+    id: ID
+    title: String!
+    content: String!
+    city: String!
+    date: String
+}
+
+type Query {
+    getTrafficNotification(id: ID!): TrafficNotification
+    getAllTrafficNotifications: [TrafficNotification!]!
+    getTrafficNotificationsByCity(city: String!): [TrafficNotification!]!
+}
+
+type Mutation {
+    createTrafficNotification(trafficNotificationInput: TrafficNotificationInput!): TrafficNotification!
+}
+
+input TrafficNotificationInput {
+    title: String!
+    content: String!
+    city: String!
+}

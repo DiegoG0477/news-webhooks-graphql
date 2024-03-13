@@ -1,0 +1,22 @@
+type City {
+    id: ID
+    name: String!
+    country: String!
+}
+
+type Query {
+    getCity(id: ID!): City
+    getAllCities: [City!]!
+    getCitiesPaginated(page: Int!, limit: Int!): [City]
+}
+
+input CityInput {
+    name: String!
+    country: String!
+}
+
+type Mutation {
+    createCity(cityInput: CityInput!): City!
+    updateCity(id: ID!, cityInput: CityInput!): City!
+    deleteCity(id: ID!): Boolean!
+}

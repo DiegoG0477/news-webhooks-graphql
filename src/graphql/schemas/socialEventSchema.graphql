@@ -1,0 +1,24 @@
+type SocialEvent {
+    id: ID
+    type: String!
+    name: String!
+    city: String!
+    date: String!
+}
+
+input SocialEventInput {
+    type: String!
+    name: String!
+    city: String!
+    date: String!
+}
+
+type Query {
+    socialEvent(id: ID!): SocialEvent
+    socialEvents: [SocialEvent!]!
+    getSocialEventsByCity(city: String!): [SocialEvent!]!
+}
+
+type Mutation {
+    createSocialEvent(socialEventInput: SocialEventInput!): SocialEvent!
+}

@@ -1,0 +1,23 @@
+type News {
+    id: ID
+    title: String!
+    content: String!
+    city: String!
+    date: String
+}
+
+input NewsInput {
+    title: String!
+    content: String!
+    city: String!
+}
+
+type Query {
+    getNews(id: ID!): News
+    getAllNews: [News]
+    getNewsByCity(city: String!): [News]
+}
+
+type Mutation {
+    createNews(newsInput: NewsInput!): News
+}

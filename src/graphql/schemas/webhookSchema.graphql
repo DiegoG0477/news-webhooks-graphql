@@ -1,0 +1,22 @@
+type Webhook {
+    id: ID
+    url: String!
+    eventId: String!
+    dateSended: String
+}
+
+type Query {
+    getWebhooks: [Webhook!]!
+    getWebhookById(id: ID!): Webhook
+}
+
+type Mutation {
+    createWebhook(webhookInput: WebhookInput): Webhook!
+    deleteWebhook(id: ID!): Boolean!
+}
+
+input WebhookInput {
+    url: String!
+    eventId: String!
+    dateSended: String
+}
